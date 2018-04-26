@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<style>
+.button {
+    background-color: #D81B60; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	width: 100%;
+	border-radius: 12px;
+}
+table,th,td {
+	font-family: "Trebuchet MS", Arial, Helvetica;
+  border : 1px solid #D81B60;
+  border-collapse: collapse;
+}
+
+th,td {
+  padding: 5px;
+}
+tr:hover {background-color: #f5f5f5;}
+tr:nth-child(even) {background-color: #F8BBD0;}
+
+</style>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About - Supreme Icecream Shop</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+				<ul id="navigation">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li class="menu selected">
+						<a href="about.html">About</a>
+						<ul class="primary">
+							<li>
+								<a href="product.html">Product</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu">
+						<a href="blog.html">Blog</a>
+						<ul class="secondary">
+							<li>
+								<a href="#">Single post</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body">
+			<div class="header">
+				<div>
+					<h1>About</h1>
+				</div>
+			</div>
+			<div class="body">
+				<img src="images/bg-header-about.jpg" alt="">
+			</div>
+			<div class="footer">
+				<div class="sidebar">
+					<h1>Be Part of Our Supreme Community</h1>
+					<p>Supreme was established in 1970 and since then we have been favourite among the community. You can join our community by following us on Facebook and Instagram and avail attractive discounts exclusively for our community members!</p>
+				</div>
+				<div class="article">
+					<h1>Find the nearest Supreme outlet!</h1>
+					<p>We are located at 30 locations all over India. We are present in all major metropolitan cities including Mumbai, Delhi, Chennai etc. So head over to your nearest Supreme Outlet!</p>
+								<h1>We Have Flavour For Everyone</h1>
+					<p>Our Supreme shop has come up with several lipsmacking flavours since our inception in 1970. We started with two flavours and now we are proud owners of 40 unique flavours nowhere wlse to be found!</p>
+					
+
+						<button class="button" type="button" onclick="loadDoc()" width=50%>Check all the latest flavours!</button>
+<br><br>
+<table id="demo"></table>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "flavours.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Flavour</th><th>Description</th></tr>";
+  var x = xmlDoc.getElementsByTagName("IC");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("FLAVOR")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("DESCRIPTION")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+
+
+
+									</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<div class="connect">
+					<a href="fb.html" class="facebook">facebook</a>
+					<a href="tw.html" class="twitter">twitter</a>
+					<a href="gg.html" class="googleplus">googleplus</a>
+					<a href="pin.html" class="pinterest">pinterest</a>
+				</div>
+				<p>&copy; 2023 Supreme Ice Creams. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

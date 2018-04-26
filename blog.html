@@ -1,0 +1,124 @@
+<!doctype html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>blog - Frozen Yogurt Shop</title>
+	<link rel="stylesheet" href="css/IceCream.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script src="js/mobile.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+				<ul id="navigation">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li class="menu">
+						<a href="about.html">About</a>
+					</li>
+					<li class="menu selected">
+						<a href="blog.html">Blog</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body">
+			<div class="header">
+				<div>
+					<h1>Blog</h1>
+				</div>
+			</div>
+			<div class="blog">
+				<div class="featured">
+					<ul>
+						<li>
+							<img src="images/new-chills.png" alt="">
+							<div>
+								<h1>NEW CHILLS FOR SUMMER</h1>
+								<span>By Admin on November 28, 2023</span>
+								<p>We are extraordinarily fortunate to be kicking off the January programme for Summer in the Square with one of Flying Nun Records’ most iconic acts: The Chills! These guys are true pioneers of the legendary “Dunedin sound”, and have just released a brand new record - Silver Bullets - to international acclaim. Don’t miss this rare opportunity to catch a free lunchtime gig from The Chills! </p>
+								<p id='article'></p>
+								<div  onclick="loadArticle()" class="more">Read More</div>
+							</div>
+						</li>
+						<li>
+							<a href="https://www.xul.fr/rss.xml">
+   								<img src="rss.gif">
+							</a>
+						</li>
+						<li>
+							<img src="images/berries.png" alt="">
+							<div>
+								<h1>BERRIES ON THE GROVE</h1>
+								<p>Berries is a charming neighborhood restaurant serving some of the freshest food in South Florida. Dine al fresco and enjoy our daily happy hour specials and exquisite menu.Berries is the perfect place for friends and family to meet and eat!</p>
+								<p id='article1'></p>
+								<div  onclick="loadArticle1()" class="more">Read More</div>
+							</div>
+						</li>
+					</ul>
+					<a href="blog.html" class="load">Load More</a>
+				</div>
+				<div class="sidebar">
+					<div id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:200px;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:500px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1520269097889&amp;x=https%3A%2F%2Fwww.bonappetit.com%2Ffeed%2Frss&amp;w=200&amp;h=500&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=true&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:200px; height:500px;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br></div></div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<div class="connect">
+					<a href="https://www.facebook.com" class="facebook">facebook</a>
+					<a href="https://www.twitter.com" class="twitter">twitter</a>
+					<a href="https://www.googleplus.com" class="googleplus">googleplus</a>
+					<a href="https://www.pinterest.com" class="pinterest">pinterest</a>
+				</div>
+				<p>&copy; 2023 Freeeze. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	 function loadArticle(){
+    var xhttp2 = new XMLHttpRequest();
+    xhttp2.onreadystatechange=function(){
+      console.log(this.readystate);
+      console.log(this.status);
+      if(this.status==200){
+        console.log("Okay");
+        console.log(this.responseText);
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+        document.getElementById("article").innerHTML= data[0].article;
+      }
+    };
+    xhttp2.open("GET","article.json",true);
+    xhttp2.send();
+  }
+  	 function loadArticle1(){
+    var xhttp2 = new XMLHttpRequest();
+    xhttp2.onreadystatechange=function(){
+      console.log(this.readystate);
+      console.log(this.status);
+      if(this.status==200){
+        console.log("Okay");
+        console.log(this.responseText);
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+        document.getElementById("article1").innerHTML= data[1].article;
+      }
+    };
+    xhttp2.open("GET","article.json",true);
+    xhttp2.send();
+  }
+</script>
+
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<style>
+table,th,td {
+	font-family: "Trebuchet MS", Arial, Helvetica;
+  border : 0px solid #D81B60;
+  border-collapse: collapse;
+}
+
+th,td {
+  padding: 5px;
+}
+</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact - Supreme Icecream Shop</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<script>
+	function clickFuntion() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+		  var data = JSON.parse(this.responseText);
+		  var i;
+		  var table="<tr><th>Outlet</th><th>Address</th></tr>";
+		  for (i = 0; i <data.length; i++) { 
+			table += "<tr><td>" +
+			data[i].outlet +
+			"</td><td>" +
+			data[i].address +
+			"</td></tr>";
+		  }
+		  document.getElementById("demo").innerHTML = table;
+		} 
+	  };
+	  xhttp.open("GET", "store.json", true);
+	  xhttp.send();
+	}
+	</script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+				<ul id="navigation">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li class="menu">
+						<a href="about.html">About</a>
+						<ul class="primary">
+							<li>
+								<a href="product.html">Product</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu">
+						<a href="blog.html">Blog</a>
+						<ul class="secondary">
+							<li>
+								<a href="singlepost.html">Single post</a>
+							</li>
+						</ul>
+					</li>
+					<li class="selected">
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body" class="contact">
+			<div class="header">
+				<div>
+					<h1>Contact</h1>
+				</div>
+			</div>
+			<div class="body">
+				<div>
+					<div>
+						<img src="images/check-in.png" alt="">
+						<h1>Plot 23 , Vashi Plaza, Bhosle Nagar</h1>
+						<p>Vashi Headquaters</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="contact">
+					<h1>INQUIRY FORM</h1>
+					<form action="index.html">
+						<input type="text" name="Name" value="Name" onblur="this.value=!this.value?'Name':this.value;" onfocus="this.select()" onclick="this.value='';">
+						<input type="text" name="Email" value="Email" onblur="this.value=!this.value?'Email':this.value;" onfocus="this.select()" onclick="this.value='';">
+						<input type="text" name="Subject" value="Subject" onblur="this.value=!this.value?'Subject':this.value;" onfocus="this.select()" onclick="this.value='';">
+						<textarea name="meassage" cols="50" rows="7">Share your thoughts</textarea>
+						<input type="submit" value="Send" id="submit">
+					</form>
+				<p>For detailed addresses of all our outlets, please click <b onclick="clickFuntion()">here.</b></p>	
+				<table id="demo"></table>
+				</div>
+				<div class="section">
+					<h1>WE’D LOVE TO HEAR FROM YOU.</h1>
+					<p>Stay connected with Supreme for latest offers and discounts.</p>
+					
+				</div>
+			<br>
+				<div id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:275px;background-color:#transparent; border:1px solid #333333;">
+				<div id="rsswidget" style="height:275px;">
+				<iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1520278399344&amp;x=http%3A%2F%2Frss.cnn.com%2Frss%2Fcnn_topstories.rss&amp;w=275&amp;h=275&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=Supreme Icecreams&amp;tc=333333&amp;ts=15&amp;tb=FF66E0&amp;il=true&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:275px; height:275px;" id="rssOutput">Reading RSS Feed ...</iframe>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<div class="connect">
+					<a href="fb.html" class="facebook">facebook</a>
+					<a href="tw.html" class="twitter">twitter</a>
+					<a href="gg.html" class="googleplus">googleplus</a>
+					<a href="pin.html" class="pinterest">pinterest</a>
+				</div>
+				<p>&copy; 2023 Supreme Ice Creams. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

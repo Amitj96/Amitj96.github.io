@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+  <IC>
+    <DESCRIPTION>Made from fresh cow's milk to give the smoothest texture and long lasting taste!</DESCRIPTION>
+    <FLAVOR>Malai</FLAVOR>
+   
+  </IC>
+  <IC>
+    <DESCRIPTION>Made from selected strawberries from Himachal Pradesh!</DESCRIPTION>
+    <FLAVOR>Strawberry</FLAVOR>
+    
+  </IC>
+  <IC>
+    <DESCRIPTION>Pista flavoured kulfi is our highest selling and all time favourite kulfi!</DESCRIPTION>
+    <FLAVOR>Pista</FLAVOR>
+    
+  </IC>
+  <IC>
+    <DESCRIPTION>Roasted almonds gives an unique taste which can be found no where else</DESCRIPTION>
+    <FLAVOR>Almonds</FLAVOR>
+    
+  </IC>
+  <IC>
+    <DESCRIPTION>Pan lover? The pan flavoured kulfi is a perfect blend of sweet and spice!</DESCRIPTION>
+    <FLAVOR>Pan Masala</FLAVOR>
+    
+  </IC>
+<IC>
+    <DESCRIPTION>A rarely made black raspberry ice cream with mouth watering chocolate covered almonds</DESCRIPTION>
+    <FLAVOR>Black Raspberry Crunch</FLAVOR>
+    
+  </IC>
+<IC>
+    <DESCRIPTION>A fruit loops tasting ice cream with super-secret natural ingredients</DESCRIPTION>
+    <FLAVOR>Blue Moon</FLAVOR>
+    
+  </IC>
+<IC>
+    <DESCRIPTION>Sweet candy covered pecans mixed with electrifying Caramel swirls</DESCRIPTION>
+    <FLAVOR>Caramel Praline</FLAVOR>
+    
+  </IC>
+<IC>
+    <DESCRIPTION>A richly made heavenly chocolate</DESCRIPTION>
+    <FLAVOR>Chocolate</FLAVOR>
+    
+  </IC>
+  
+</CATALOG>
